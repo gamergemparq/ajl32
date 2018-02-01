@@ -92,6 +92,17 @@ function updateHaqiemLikesCtr() {
 	);
 }
 
+function login() {
+    FB.login(
+        function(response) {
+
+            // handle the response
+            console.log("Response goes here!");
+
+        }, {}
+    );            
+}
+
 $(document).ready(function() {
   $.ajaxSetup({ cache: true });
 
@@ -103,6 +114,7 @@ $(document).ready(function() {
     });    
 
     FB.AppEvents.logPageView(); 
+
 
     /*
     FB.getLoginStatus(function(response) {
