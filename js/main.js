@@ -91,8 +91,9 @@ $(document).ready(function() {
 
     FB.getLoginStatus(function(response) {
 	  if (response.status === 'connected') {
-	    var accessToken = response.authResponse.accessToken;
-	    $('#access_token').innerHTML(accessToken);
+	   	checkLoginState();
+	  }else{
+	  	alert('FB not logged in.');
 	  } 
 	} );
     
