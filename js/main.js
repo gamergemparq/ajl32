@@ -67,3 +67,46 @@ $('#countdown').countdown({
 	    .append("<div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
 	}
 });
+
+function updateStatusCallback() {
+	console.log('status callback ok');
+}
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    var accessToken = response.authResponse.accessToken;
+	$('#access_token').innerHTML(accessToken);
+  });
+}
+
+$(document).ready(function() {
+  $.ajaxSetup({ cache: true });
+
+  $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+
+    FB.init({
+      appId: '147462132637476',
+      version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+    });     
+
+    FB.getLoginStatus(function(response) {
+	  if (response.status === 'connected') {
+	    var accessToken = response.authResponse.accessToken;
+	    $('#access_token').innerHTML(accessToken);
+	  } 
+	} );
+    
+    /* make the API call */
+	FB.api(
+	    "/10155277882381167",
+	    function (response) {
+	      if (response && !response.error) {
+	        /* handle the result */
+	        $('#akimctr').innerHTML(response.summary.total_count);
+	      }
+	    }
+	);
+
+  });
+
+});
