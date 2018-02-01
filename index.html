@@ -2,6 +2,8 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <!DOCTYPE html>
 <html lang="en-US">
+    <!--<![endif]-->
+
     <head>
         <meta charset="utf-8">
         <title>
@@ -43,75 +45,148 @@
         <script src="js/jquery.js"></script>
     </head>
     <body>
-         <div id="fb-root"></div>
+        <div class="preloader">
+            <div class="loading">
+                <h2>
+                    Loading...
+                </h2>
+                <span class="progress"></span>
+            </div>
+        </div>
 
-        <script>
-            window.fbAsyncInit = function() {
-                    FB.init({
-                    appId: '147462132637476',
-                    status: true,
-                    cookie: true,
-                    xfbml: true
-                });
-            };
+        <div class="wrapper">
+            <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+             
+            <ul class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15" id="scene">
+                <li class="layer" data-depth="0.00">
+                </li>
+                <!-- BG -->
 
-            // Load the SDK asynchronously
-            (function(d){
-            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement('script'); js.id = id; js.async = true;
-            js.src = "//connect.facebook.net/en_US/all.js";
-            ref.parentNode.insertBefore(js, ref);
-            }(document));
+                <li class="layer" data-depth="0.10">
+                    <div class="background">
+                    </div>
+                </li>
 
-            /*$(document).ready(function() {
-              $.ajaxSetup({ cache: true });
+                <!-- Hero -->
 
-              $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+                <li class="layer" data-depth="0.20">
+                    <div class="title">
+                        <h2>
+                            Anugerah Juara Lagu ke-32, LIKES ranking list
+                        </h2>
+                        <span class="line"></span>
+                    </div>
+                </li>
 
-                FB.init({
-                  appId: '147462132637476',
-                  version: 'v2.7' // or v2.1, v2.2, v2.3, ...
-                });    
+                <li class="layer" data-depth="0.25">
+                    <div class="sphere">
+                        <img alt="sphere" src="images/sphere.png">
+                    </div>
+                </li>
 
-                FB.AppEvents.logPageView(); 
+                <li class="layer" data-depth="0.30">
+                    <div class="hero">
+                        <h1 id="countdown">
+                            The most spectacular coming soon template!
+                        </h1>
 
+                        <p class="sub-title">
+                            Sudahkah anda mengundi, hari ni? <br/>
+                            <span id="akimctr">akimctr</span><br/>
+                            <span id="access_token">access_token</span><br/>
+                        </p>
+                        
 
-              });
+                    </div>
+                </li>
+                <!-- Flakes -->
 
-            });*/
+                <li class="layer" data-depth="0.40">
+                    <div class="depth-1 flake1">
+                        <img alt="flake" src="images/flakes/depth1/flakes1.png">
+                    </div>
 
-            function login() {
-                FB.login(
-                    function(response) {
+                    <div class="depth-1 flake2">
+                        <img alt="flake" src="images/flakes/depth1/flakes2.png">
+                    </div>
 
-                        // handle the response
-                        console.log("Response goes here!");
+                    <div class="depth-1 flake3">
+                        <img alt="flake" src="images/flakes/depth1/flakes3.png">
+                    </div>
 
-                    }, {
-                        scope: 'read_stream,publish_stream,publish_actions,read_friendlists'
-                    }
-                );            
-            }
+                    <div class="depth-1 flake4">
+                        <img alt="flake" src="images/flakes/depth1/flakes4.png">
+                    </div>
+                </li>
 
-            function logout() {
-                FB.logout(function(response) {
-                  // user is now logged out
-                });
-            }
+                <li class="layer" data-depth="0.50">
+                    <div class="depth-2 flake1">
+                        <img alt="flake" src="images/flakes/depth2/flakes1.png">
+                    </div>
 
-            var status = FB.getLoginStatus();
+                    <div class="depth-2 flake2">
+                        <img alt="flake" src="images/flakes/depth2/flakes2.png">
+                    </div>
+                </li>
 
-            console.log(status);
+                <li class="layer" data-depth="0.60">
+                    <div class="depth-3 flake1">
+                        <img alt="flake" src="images/flakes/depth3/flakes1.png">
+                    </div>
 
-        </script>
+                    <div class="depth-3 flake2">
+                        <img alt="flake" src="images/flakes/depth3/flakes2.png">
+                    </div>
 
-        <!--  <button onclick="javascript:login();">Login Facebook</button> -->
+                    <div class="depth-3 flake3">
+                        <img alt="flake" src="images/flakes/depth3/flakes3.png">
+                    </div>
 
-        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+                    <div class="depth-3 flake4">
+                        <img alt="flake" src="images/flakes/depth3/flakes4.png">
+                    </div>
+                </li>
 
-        <br>
+                <li class="layer" data-depth="0.80">
+                    <div class="depth-4">
+                        <img alt="flake" src="images/flakes/depth4/flakes.png">
+                    </div>
+                </li>
 
-        <!-- <button onclick="javascript:logout();">Logout from Facebook</button> -->
+                <li class="layer" data-depth="1.00">
+                    <div class="depth-5">
+                        <img alt="flake" src="images/flakes/depth5/flakes.png">
+                    </div>
+                </li>
+                <!-- Contact 
+
+                <li class="layer" data-depth="0.20">
+                    <div class="contact">
+                        <ul class="icons">
+                            <li>
+                                <a class="behance" href="#"><i class="fa fa-behance"></i></a>
+                            </li>
+
+                            <li>
+                                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+
+                            <li>
+                                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                        Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                        <a class="mail" href="mailto:info@example.com?subject=Hi%20ThemeWagon!">info@example.com</a>
+                    </div>
+                </li>
+                -->
+            </ul>
+        </div>
+
+        <!-- Javascript -->
+        <script src="js/plugins.js"></script> 
+        <script src="js/jquery.countdown.min.js"></script> 
+        <script src="js/main.js"></script>
+
     </body>
-</html
+</html>

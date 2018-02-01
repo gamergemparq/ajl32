@@ -1,0 +1,117 @@
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Anugerah Juara Lagu ke-32, LIKES ranking list by Ejad
+        </title><!-- Behavioral Meta Data -->
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"><!-- Core Meta Data -->
+        <meta content="ejad" name="author">
+        <meta content="The most spectacular coming soon template!" name="description">
+        <meta content="Comming Soon, Responsive, Landing Page, One Page" name="keywords"><!-- Open Graph Meta Data -->
+        <meta content="The most spectacular coming soon template!">
+        <meta content="ejad">
+        <meta content="ejad">
+        <meta content="website">
+        <meta content="index.html"><!-- Twitter Card Meta Data -->
+        <meta content="summary" name="twitter:card">
+        <meta content="@ejad" name="twitter:site">
+        <meta content="@ejad" name="twitter:creator">
+        <meta content="ejad" name="twitter:title">
+        <meta content="Imminent - The most spectacular coming soon template!" name="twitter:description">
+
+        <link href="favicon.png" rel="shortcut icon" type="image/png">
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <!-- CSS -->
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,100,900' rel='stylesheet' type='text/css'><!-- Styles -->
+        <link href="css/loader.css" rel="stylesheet" type="text/css">
+        <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+            <link rel="stylesheet" type="text/css" href="css/ie.css" />
+        <![endif]-->
+        <!-- Javascript -->
+
+        <script src="js/jquery.js"></script>
+    </head>
+    <body>
+         <div id="fb-root"></div>
+
+        <script>
+            window.fbAsyncInit = function() {
+                    FB.init({
+                    appId: '147462132637476',
+                    status: true,
+                    cookie: true,
+                    xfbml: true
+                });
+            };
+
+            // Load the SDK asynchronously
+            (function(d){
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            ref.parentNode.insertBefore(js, ref);
+            }(document));
+
+            /*$(document).ready(function() {
+              $.ajaxSetup({ cache: true });
+
+              $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+
+                FB.init({
+                  appId: '147462132637476',
+                  version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+                });    
+
+                FB.AppEvents.logPageView(); 
+
+
+              });
+
+            });*/
+
+            function login() {
+                FB.login(
+                    function(response) {
+
+                        // handle the response
+                        console.log("Response goes here!");
+
+                    }, {
+                        scope: 'read_stream,publish_stream,publish_actions,read_friendlists'
+                    }
+                );            
+            }
+
+            function logout() {
+                FB.logout(function(response) {
+                  // user is now logged out
+                });
+            }
+
+            var status = FB.getLoginStatus();
+
+            console.log(status);
+
+        </script>
+
+        <!--  <button onclick="javascript:login();">Login Facebook</button> -->
+
+        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+
+        <br>
+
+        <!-- <button onclick="javascript:logout();">Logout from Facebook</button> -->
+    </body>
+</html

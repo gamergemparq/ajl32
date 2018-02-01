@@ -92,20 +92,40 @@ function updateHaqiemLikesCtr() {
 	);
 }
 
-window.fbAsyncInit = function() {
-        FB.init({
-        appId: '147462132637476',
-        status: true,
-        cookie: true,
-        xfbml: true
-    });
-};
+function login() {
+    FB.login(
+        function(response) {
 
-// Load the SDK asynchronously
-(function(d){
-var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-if (d.getElementById(id)) {return;}
-js = d.createElement('script'); js.id = id; js.async = true;
-js.src = "//connect.facebook.net/en_US/all.js";
-ref.parentNode.insertBefore(js, ref);
-}(document));
+            // handle the response
+            console.log("Response goes here!");
+
+        }, {}
+    );            
+}
+
+$(document).ready(function() {
+  $.ajaxSetup({ cache: true });
+
+  $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+
+    FB.init({
+      appId: '147462132637476',
+      version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+    });    
+
+    FB.AppEvents.logPageView(); 
+
+
+    /*
+    FB.getLoginStatus(function(response) {
+	  if (response.status === 'connected') {
+	   	checkLoginState();
+	   	updateHaqiemLikesCtr();
+	  }else{
+	  	alert('FB not logged in.');
+	  } 
+	} );
+	*/
+  });
+
+});
