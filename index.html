@@ -89,7 +89,16 @@
                         </h1>
 
                         <p class="sub-title">
-                            Sudahkah anda mengundi, hari ni?
+                            Sudahkah anda mengundi, hari ni? <br/>
+                            <span id="akimctr">akimctr</span><br/>
+                            <span id="access_token">access_token</span><br/>
+                        </p>
+                        <p>
+                            
+                            <fb:login-button 
+                              scope="public_profile,email"
+                              onlogin="checkLoginState();">
+                            </fb:login-button>
                         </p>
                     </div>
                 </li>
