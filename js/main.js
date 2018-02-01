@@ -104,6 +104,7 @@ $(document).ready(function() {
 
     FB.AppEvents.logPageView(); 
 
+    /*
     FB.getLoginStatus(function(response) {
 	  if (response.status === 'connected') {
 	   	checkLoginState();
@@ -112,7 +113,7 @@ $(document).ready(function() {
 	  	alert('FB not logged in.');
 	  } 
 	} );
-
+	*/
   });
 
 });
